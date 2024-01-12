@@ -1,0 +1,901 @@
+/* Resetting default styles and setting box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+ 
+}
+
+/* Smooth scrolling for the entire HTML document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Styling for the scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Styling for the loader background */
+.loader_bg {
+  position: fixed;
+  z-index: 999;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling for the loader animation */
+.loader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader img {
+  width: 280px;
+}
+
+/* Styling for the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f57308, #fff, rgb(11, 242, 7));
+}
+
+/* Hover effect for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1a6ad2, #fff, rgb(245, 5, 53));
+}
+
+/* Styling for generic sections */
+section {
+  padding: 100px 0;
+}
+
+/* Styling for h1 heading */
+h1{
+  font-size: 20px;
+  font-style: italic;
+  margin: 50px 10px 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Setting maximum width for content */
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+/* Font styling for specific sections */
+.about, .services, .skills,
+.projects, .contact, footer {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Flexbox styling for specific section contents */
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styling for section titles */
+section .title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Styling for a line below section titles */
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  transform: translateX(-50%);
+}
+
+
+/* Styling for a decorative line below section titles */
+section .title::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 20px;
+  color: crimson;
+  padding: 0 5px;
+  transform: translateX(-50%);
+}
+
+/* Styling for skill and what I did sections */
+.skill, .whatidid {
+  border-radius: 39px;
+  display: inline-block;
+  background: #514a1e;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: 2px solid #514a1e;
+  transition: all 0.3s ease;
+}
+
+/* Styling for the back-to-top button */
+.backtotop {
+  border-radius: 39px;
+  display: inline-block;
+  background: #514a1e;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 150px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: 2px solid #514a1e;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for skill,
+ back-to-top, and what I did sections */
+.skill:hover, .backtotop:hover, .whatidid:hover {
+  background: #a39d9d;
+  border: #a39d9d;
+  color: #1e3551;
+}
+
+/* Styling for the navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #09356f;
+  z-index: 999;
+  padding: 30px 0;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Styling for the sticky navbar */
+.navbar.sticky {
+  padding: 15px 0;
+  background: #1e3551;
+}
+
+/* Styling for the content within the navbar */
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styling for the logo in the navbar */
+.navbar .logo a {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+/* Styling for the gradient 
+background of the logo span in the navbar */
+.navbar .logo a span {
+  background: linear-gradient(135deg, #006eff, #c300ff, #659728,  #ffffff, crimson);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Styling for the logo span in the sticky navbar */
+.navbar.sticky .logo a span {
+  color: #fff;
+}
+
+/* Styling for the menu items in the navbar */
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+/* Styling for the links within the navbar menu */
+.navbar .menu li a {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+
+/* Hover effect for menu item links in the navbar */
+.navbar .menu li a:hover {
+  color: wheat;
+  text-decoration: underline 2px rgb(105, 177, 255);
+}
+
+/* Hover effect for menu item links in the sticky navbar */
+.navbar.sticky .menu li a:hover {
+  color: #fff;
+}
+
+/* Styling for the menu button */
+.menu-btn {
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn:hover {
+  color: wheat;
+}
+
+/* Styling for the scroll-up button */
+.scroll-up-btn, .scroll-up-btn.show {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: #1e3551;
+  right: 20px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hover effect for the scroll-up button */
+.scroll-up-btn:hover {
+  filter: brightness(50%);
+}
+
+/* Styling for the home section */
+.home {
+  display: flex;
+  background: url("momo.jpg") no-repeat center;
+  height: 100vh;
+  color: #ffffff;
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* Styling for the content within the home section */
+.home .max-width {
+  width: 100%;
+  display: flex;
+}
+
+/* Styling for the text within the home section */
+.home .home-content .text-1 {
+  font-size: 27px;  /*text-1*/
+}
+
+.home .home-content .text-2 {
+  font-size: 75px;  /*text-2*/
+  font-weight: 600;
+  margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+  font-size: 40px;  /*text-3*/
+  margin: 5px 0;
+}
+
+/* Styling for the linear gradient within the home section */
+.home .home-content .text-3 span {
+  color: #1e3551;
+  background: teal;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+/* Styling for the link within the home section */
+.home .home-content a {
+  display: inline-block;
+  background: #514a1e;
+  color: white;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: 2px solid #514a1e;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the link within the home section */
+.home .home-content a:hover {
+  color: #1e3551;
+  background: #a39d9d;
+  border: 0px white solid;
+  animation: pulsate 1s ease-in-out;
+}
+
+/* Styling for the about section */
+.about {
+  background: radial-gradient(#e1efff, white);
+}
+
+/* Styling for the title in the about section */
+.about .title::after {
+  content: "—About Me—";
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Styling for the left content in the about section */
+.about .about-content .left {
+  width: 45%;
+}
+
+/* Styling for the image in the about section */
+.about .about-content .left img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Styling for the right content in the about section */
+.about .about-content .right {
+  width: 55%;
+}
+
+/* Styling for text in the right content of the about section */
+.about .about-content .right .text {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Styling for the linear gradient in the right content of the about section */
+.about .about-content .right .text span {
+  background: teal;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Styling for paragraphs in the right content of the about section */
+.about .about-content .right p {
+  text-align: justify;
+}
+
+/* Styling for links in the right content of the about section */
+.about .about-content .right a {
+  display: inline-block;
+  background: #514a1e;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid #514a1e;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for links in the right content of the about section */
+.about .about-content .right a:hover {
+  color: #1e3551;
+  background: #a39d9d;
+  border: #a39d9d solid;
+  animation: pulsate 1s ease-in-out;
+}
+
+/* Styling for the services and projects sections */
+.services,
+.projects {
+  color: #fff;
+  background: #111;
+}
+
+/* Styling for the title in the services and projects sections */
+.services .title::before,
+.projects .title::before {
+  background: #333;
+}
+
+/* Styling for the subtitle in the services and projects sections */
+.services .title::after,
+.projects .title::after {
+  background: #111;
+  content: "What I Can Do";
+}
+
+/* Styling for the card in the services section */
+.services .serv-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services .serv-content .card {
+  width: calc(25% - 10px);
+  background: #222;
+  text-align: center;
+  border-radius: 10px;
+  padding: 50px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.projects .card a {
+  color: #fff; 
+}
+
+/* Hover effect for the card in the services section */
+.services .serv-content .card:hover {
+  background: #434343;
+}
+
+/* Transition effect for the box in the services section */
+.services .serv-content .card .box {
+  transition: all 1s ease;
+}
+
+/* Hover effect for the box in the services section */
+.services .serv-content .card:hover .box {
+  transform: scale(1.05);
+}
+
+/* Styling for the icon in the services section */
+.services .serv-content .card i {
+  font-size: 50px;
+  color: #888e8d;
+  background: linear-gradient(135deg,#ffffff, rgb(125, 55, 69), rgb(0, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for the icon in the services section */
+.services .serv-content .card:hover i {
+  color: #fff;
+}
+
+/* Styling for the text in the services section */
+.services .serv-content .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+
+/* Styling for the skills section */
+.skills, .contact {
+  background: radial-gradient(#c9bdf4, rgb(255, 255, 255));
+}
+
+/* Styling for the title in the skills section */
+.skills .title::after {
+  content: "—What I Know—";
+}
+
+/* Styling for the columns in the skills section */
+.skills .skills-content .column {
+  width: calc(50% - 30px);
+}
+
+/* Styling for text in the left column of the skills section */
+.skills .skills-content .left .text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Styling for paragraphs in the left column of the skills section */
+.skills .skills-content .left p {
+  text-align: justify;
+}
+
+/* Styling for links in the left column of the skills section */
+.skills .skills-content .left a {
+  display: inline-block;
+  background: #1e3551;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid #1e3551;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for links in the left column of the skills section */
+.skills .skills-content .left a:hover {
+  color: #1e3551;
+  background: none;
+  animation: pulsate 1s ease-in-out;
+}
+
+/* Styling for the project list */
+.projects, .soft-skills, .hobbies {
+  list-style: none;
+}
+
+/* Styling for the project bullet */
+.project::before, 
+.soft-skills::before,
+ .hobbies::before {
+  content: "✪ ";
+  color: #1e3551;
+}
+
+/* Styling for the bars and info in the right column of the skills section */
+.skills .skills-content .right .bars,
+.skills .skills-content .right .info {
+  margin-bottom: 15px;
+}
+
+/* Styling for spans in the right column of the skills section */
+.skills .skills-content .right span {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+
+/* Styling for the line in the right column of the skills section */
+.skills .skills-content .right .line {
+  height: 5px;
+  width: 100%;
+  background: lightgray;
+  position: relative;
+}
+
+/* Styling for the colored line in the right column of the skills section */
+.skills .skills-content .right .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #1e3551;
+}
+
+/* Styling for individual lines based on skills in the right column of the skills section */
+.skills-content .right .html::before {
+  width: 80%;
+}
+
+.skills-content .right .python::before {
+  width: 40%;
+}
+
+.skills-content .right .MySQL::before {
+  width: 40%;
+}
+
+
+.skills-content .right .PostgreSQL::before {
+  width: 20%;
+}
+
+.skills-content .right .css::before {
+  width: 50%;
+}
+
+.skills-content .right .flask::before {
+  width: 40%;
+}
+
+
+
+.skills-content .right .js::before {
+  width: 20%;
+}
+
+/* Styling for the projects section */
+.projects .title::after {
+  content: "What I did";
+}
+
+/* Styling for the cards in the project carousel */
+.projects .carousel .card {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the cards in the project carousel */
+.projects .carousel .card:hover {
+  background: #1e3551;
+}
+
+/* Styling for the box within the cards in the project carousel */
+.projects .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the box within the cards in the project carousel */
+.projects .carousel .card:hover .box {
+  transform: scale(1.05);
+}
+
+.whaticando{
+  text-align: justify;
+}
+
+/* Styling for text within the cards in the project carousel */
+.projects .carousel .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+
+/* Styling for images within the cards in the project carousel */
+.carousel .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #888c8d;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for images within the cards in the project carousel */
+.projects .carousel .card:hover img {
+  border-color: #fff;
+}
+
+/* Styling for the dots in the owl carousel */
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Styling for individual dots in the owl carousel */
+.owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none !important;
+  border-radius: 50%;
+  border: 2px solid #888c8d !important;
+  transition: all 0.3s ease;
+}
+
+/* Styling for active and hovered dots in the owl carousel */
+.owl-dot.active {
+  width: 35px;
+  border-radius: 14px;
+}
+
+.owl-dot.active,
+.owl-dot:hover {
+  background: #18365a !important;
+}
+
+/* Styling for the title in the contact section */
+.contact .title::after {
+  content: "—Get in Touch—";
+}
+
+/* Styling for columns in the contact section */
+.contact .contact-content .column {
+  width: calc(50% - 30px);
+}
+
+/* Styling for text in the contact section */
+.contact .contact-content .text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Styling for paragraphs in the left column of the contact section */
+.contact .contact-content .left p {
+  text-align: justify;
+}
+
+/* Styling for icons in the left column of the contact section */
+.contact .contact-content .left .icons {
+  margin: 10px 0;
+}
+
+/* Styling for rows in the contact section */
+.contact .contact-content .row {
+  display: flex;
+  height: 65px;
+  align-items: center;
+}
+
+/* Styling for information in the rows of the contact section */
+.contact .contact-content .row .info {
+  margin-left: 30px;
+}
+
+/* Styling for icons in the rows of the contact section */
+.contact .contact-content .row i {
+  font-size: 25px;
+  color: #1e2551;
+}
+
+/* Styling for the head and sub-title in the information of the contact section */
+.contact .contact-content .info .head {
+  font-weight: 500;
+  color: #000;
+}
+
+.contact .contact-content .info .sub-title {
+  color: #333;
+}
+
+/* Styling for the social media menu */
+.social-menu ul {
+  position: absolute;
+  left: 35%;
+  padding: 0;
+  margin: 150px 100px;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+/* Styling for individual items in the social media menu */
+.social-menu ul li {
+  list-style: none;
+  margin: 19px 1px;
+}
+
+/* Styling for the font awesome icons in the social media menu */
+.social-menu ul li .fa {
+  font-size: 30px;
+  line-height: 60px;
+  transition: 0.6s;
+  color: #000;
+}
+
+/* Hover effect for the font awesome icons in the social media menu */
+.social-menu ul li .fa:hover {
+  color: #ffffff;
+}
+
+/* Styling for the links in the social media menu */
+.social-menu ul li a {
+  left: 450px;
+  right: 12px;
+  padding-top: 3px;
+  position: relative;
+  display: block;
+  width:35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #552854;
+  text-align: center;
+  transition: 0.6s;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect for the links in the social media menu */
+.social-menu ul li a:hover {
+  transform: translate(0, -5px);
+}
+
+/* Styling for specific links in the social media menu */
+.social-menu ul li:nth-child(1) a:hover {
+  background-color: #000000;
+}
+
+.social-menu ul li:nth-child(2) a:hover {
+  background-color: #0A66C2;
+}
+
+.social-menu ul li:nth-child(3) a:hover {
+  background-color: #1D9BF0;
+}
+
+.social-menu ul li:nth-child(4) a:hover {
+  background-color: #000516;
+}
+
+/* Styling for the font awesome brands */
+.fa-brands {
+  color: #fff;
+}
+
+/* Styling for the footer */
+footer {
+  height: 20vh;
+  background: #333;
+  padding: 20px 16px;
+  color: #8a8c8c;
+  text-align: center;
+}
+
+/* Styling for links in the footer */
+footer span a {
+  color: #93bff5;
+  text-decoration: none;
+}
+
+/* Hover effect for links in the footer */
+footer span a:hover {
+  text-decoration: 4px solid underline red;
+}
+
+/* Styling for the links in the reference menu */
+.references ul li a {
+  left: 1px;
+  right: 12px;
+  position: relative;
+  display: block;
+  width:33px;
+  height: 35px;
+  border-radius: 50%;
+  transition: 0.6s;
+}
+
+/* Styling for the reference menu */
+.references ul {
+  list-style: none;
+  padding: 30px;
+  position: absolute;
+  left: 0;
+  padding: 30px;
+  margin: 70px 80px;
+  transform: translate(-30%, -3%);
+  display: flex;
+}
+
+.references li {
+  display: inline-block;
+  margin-right: 20px;
+  list-style: none;
+  margin:auto 5px;
+  left: auto;
+}
+
+.references img {
+  width: 40px;
+  height: 40px; 
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.references img:hover {
+  transform: scale(1.4);
+  box-shadow: 0 2px 4px rgba(156, 61, 52, 0.9);
+
+}
