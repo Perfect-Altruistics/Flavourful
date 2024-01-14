@@ -1,4 +1,3 @@
-# NOTE: Project under construction and Development
 
 ###### Recipe Book Project
 
@@ -24,8 +23,8 @@ Welcome to the Recipe Book project! This web project showcases a collection of d
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/recipe-book.git
-   cd recipe-book
+   git clone https://github.com/Flavourful.git
+   cd Flavourfull
 
     Open the index.html file in your web browser to navigate through the Recipe Book.
 
