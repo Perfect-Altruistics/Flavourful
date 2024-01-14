@@ -1,602 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grilled Salmon Recipe</title>
-   
-    <!-- Bootstrap from CDN included!-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="">
-   <style>
-    .suggestion{
-        background-color: #a54646;
-        color: white;
-        padding: 3em;
-        grid-column: span 2; /* Footer spans both columns */
-       
-    }
-    
-        /* General styles for the entire page */
+    <link rel="stylesheet" href="styles.css">
+    <title>Recipe Project - About</title>
+    <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #ebebeb;
-            color: #333;
             margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 3fr; /* Sidebar and main content */
         }
-
-        /* Styles for the full-width div */
-    .full-width-div, .box {
-        display: flex; 
-        flex-wrap: wrap;
-        justify-content: center;
-        grid-column: span 2;
-        background-attachment: fixed;
-        background-image: url("tomatos.jpg");
-        display: flex;
-        background: url("perfectaltruist.png") no-repeat center;
-        height: 100vh;
-        padding: 0!important;
-        background-size: cover;
-
-    }
-
-      /* Styles for the individual images in the full-width div */
-      .full-width-div .hover-image {
-        max-width: 150px;
-        max-height: 100px;
-        margin: 10px;
-        transition: transform 0.5s, max-width 0.3s, max-height 0.3s;
-    }
-
-    /* Hover effect */
-    .full-width-div .hover-image:hover {
-        transform: scale(2); /* Enlarge on hover */
-    }
-    
-    /* Header styles */
+        
         header {
-            grid-column: span 2; /* Header spans both columns */
-            text-align: center;
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em 0;
-        }
-
-        /* Main content styles */
-        main {
-            display: grid;
-            gap: 20px;
-            padding: 20px;
-            max-width: 1300px;
-            margin: 20px auto;
-        }
-
-        /* Section styles */
-        section {
-            background-color: rgb(255, 255, 255);
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        /* Heading styles */
-        h2, h3 {
-            color: #4CAF50;
-        }
-        /* Subheading styles */
-        h2 {
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        /* List styles */
-        ul, ol {
-            padding-left: 20px;
-        }
-
-        .ingridients{
-            list-style-type: circle;
-        }
-        /* Image styles */
-        img {
-            max-width: 100%;
-            height: auto;
-            width: 200px;
-            height: 150px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .box{
-            
+            color: #fff;
+            padding: 1em;
             width: 100%;
-        }
-
-        .box:hover{
-
-            transform: calc(30%, -10px);
-        }
-
-        /* Footer styles */
-        /* Footer spans both columns */
-        footer{
             text-align: center;
-            background-color: #4b904d;
-            color: white;
-            padding: 1em 0;
-            grid-column: span 2;
-        }
-
-        /* Sidebar Styles */
-        aside {
-            padding: 20px;
             background-color: #333;
         }
-
-        /* Sidebar image styles */
-        aside img {
-            display: inline;
-            margin-bottom: 10px;
-        }
-
         
-        /* styles for enlarged images */
-        .enlarge-checkbox {
-            display: none;
+        nav ul {
+            list-style: none;
+            padding: 0;
         }
-
-        .enlarge-container {
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            background: linear-gradient(to bottom, #f0f0f0, #c49696);
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .about {
+            background-color: #eee9e9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #333, #8e2727);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
             position: relative;
+            bottom: 0;
+            width: 100%;
         }
-
-        .enlarge-checkbox:checked + .enlarge-image {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-        }
-
-        .enlarge-image {
-            cursor: pointer;
-        }
-
-
-        .youmaylike{
-            display: inline-block;
-        }
-
-
-        .youmaylike{
-            float: left;
-        }
-@media (max-width: 1199px){
-    /* Move sidebar to the bottom in single column layout */
-   aside {
-        display: inline;
-    }
-
-    aside img:hover{
-        transform: scale(2); /* Enlarge on hover */
-        order: 2;
-        transition: transform 0.5s, max-width 0.3s, max-height 0.3s;
-
-        background-color: #4CAF50;
-    }
-
-   /* Single column layout for main content on small screens */
-
-    main {
-        grid-template-columns: 1fr; 
-    }
-
-    /* Adjust sidebar image display for responsiveness */
-    aside img {
-        display: inline;
-        margin-bottom: 10px;
-    }
-
-    /* Additional adjustment for full-width div on small screens */
-    .full-width-div {
-        grid-column: span 1; /* Change to span 1 column on small screens */
-        padding: 10px; 
-    }
-
-    /* Styles for individual images in the full-width div on small screens */
-    .full-width-div .hover-image {
-        max-width: 100%; 
-        max-height: auto; 
-        margin: 10px 0;
-    }
-}
-/* Responsive Styles */
-
-@media(max-width: 767px) {
-    /* Adjust layout to single column on small screens */
-    body {
-        grid-template-columns: 1fr; 
-        }
-
-    /* Move sidebar to the bottom in single column layout */
-    aside {
-        display: inline;
-        order: 2;
-        background-color: #4b904d;
-    }
-
-    main {
-        grid-template-columns: 1fr;  }
-
-    /* Adjust sidebar image display for responsiveness */
-    aside img {
-        display: inline;
-        margin-bottom: 10px;
-    }
-}
- </style>
+    </style>
 </head>
-
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">The Intuitivers Group</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Header section -->
     <header>
-        <h1>Grilled Salmon Recipe</h1>
+        <h1>Recipe Project</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
     </header>
-    <!-- Sidebar section -->
-    <aside>
-        <img src="rispa.jpg" alt="Grilled salmon">
-        <img src="pinterest.jpg" alt="Grilled salmon">
-        <img src="rockets.jpg" alt="Grilled salmon">
-        <img src="momo.jpg" alt="Grilled salmon">
-    </aside>
-    <!-- Main content section -->
+
     <main>
+        <div class="about-container">
+            <section class="about">
+                <h2>About Us</h2>
+                <p>Welcome to Recipe Project! We are passionate about sharing delicious and creative recipes with you. Our goal is to inspire you to explore the world of cooking and create mouthwatering dishes in your own kitchen.</p>
+                <p>Feel free to browse through our collection of recipes and discover new flavors. Whether you're a seasoned chef or a kitchen novice, we have something for everyone.</p>
+            </section>
 
-        <div class="full-width-div">
-            <p>This is4 salmon fillets (about 6 ounces each)
-                2 tablespoons olive oil
-                2 tablespoons soy sauce
-                2 tablespoons honey
-                2 cloves garlic, minced
-                1 teaspoon Dijon mustard
-                1 teaspoon lemon zest
-                Salt and pepper to taste
-                Lemon wedges for serving
-                Chopped fresh herbs (such as parsley or dill) for garnish (optional)4 salmon fillets (about 6 ounces each)
-                2 tablespoons olive oil
-                2 tablespoons soy sauce
-                2 tablespoons honey
-                2 cloves garlic, minced
-                1 teaspoon Dijon mustard
-                1 teaspoon lemon zest
-                Salt and pepper to taste
-                Lemon wedges for serving
-                Chopped fresh herbs (such as parsley or dill) for garnish (optional)4 salmon fillets (about 6 ounces each)
-                2 tablespoons olive oil
-                2 tablespoons soy sauce
-                2 tablespoons honey
-                2 cloves garlic, minced
-                1 teaspoon Dijon mustard
-                1 teaspoon lemon zest
-                Salt and pepper to taste
-                Lemon wedges for serving4 salmon fillets (about 6 ounces each)
-                2 tablespoons olive oil
-                2 tablespoons soy sauce
-                2 tablespoons honey
-                2 cloves garlic, minced
-                1 teaspoon Dijon mustard
-                1 teaspoon lemon zest
-                Salt and pepper to taste
-                Lemon wedges for serving
-                Chopped fresh herbs (such as parsley or dill) for garnish (optional)4 salmon fillets (about 6 ounces each)
-                2 tablespoons olive oil
-                2 tablespoons soy sauce
-                2 tablespoons honey
-                2 cloves garlic, minced
-                1 teaspoon Dijon mustard
-                1 teaspoon lemon zest
-                Salt and pepper to taste
-                Lemon wedges for serving
-                Chopped fresh herbs (such as parsley or dill) for garnish (optional)4 salmon fillets (about 6 ounces each)
-                2 tablespoons olive oil
-                2 tablespoons soy sauce
-                2 tablespoons honey
-                2 cloves garlic, minced
-                1 teaspoon Dijon mustard
-                1 teaspoon lemon zest
-                Salt and pepper to taste
-                Lemon wedges for serving
-                Chopped fresh herbs (such as parsley or dill) for garnish (optional)
-                Chopped fresh herbs (such as parsley or dill) for garnish (optional)4 salmon fillets (about 6 ounces each)
-                2 tablespoons olive oil
-                2 tablespoons soy sauce
-                2 tablespoons honey
-                2 cloves garlic, minced
-                1 teaspoon Dijon mustard
-                1 teaspoon lemon zest
-                Salt and pepper to taste
-                Lemon wedges for serving
-                Chopped fresh herbs (such as parsley or dill) for garnish (optional) the beautifh recipe ever taken in my life and actually i will write it from scratch</p>
+            <section class="about">
+                <h2>About Us</h2>
+                <p>Welcome to Recipe Project! We are passionate about sharing delicious and creative recipes with you. Our goal is to inspire you to explore the world of cooking and create mouthwatering dishes in your own kitchen.</p>
+                <p>Feel free to browse through our collection of recipes and discover new flavors. Whether you're a seasoned chef or a kitchen novice, we have something for everyone.</p>
+            </section>
+
+            <section class="about">
+                <h2>About Us</h2>
+                <p>Welcome to Recipe Project! We are passionate about sharing delicious and creative recipes with you. Our goal is to inspire you to explore the world of cooking and create mouthwatering dishes in your own kitchen.</p>
+                <p>Feel free to browse through our collection of recipes and discover new flavors. Whether you're a seasoned chef or a kitchen novice, we have something for everyone.</p>
+            </section>
         </div>
-
-        <section>
-            <!-- Ingredients section -->
-            <h2>Ingredients:</h2>
-            <ul class="ingridients">
-                <!-- List of ingredients -->
-                <li>4 salmon fillets (about 6 ounces each)</li>
-                <li>2 tablespoons olive oil</li>
-                <li>2 tablespoons soy sauce</li>
-                <li>2 tablespoons honey</li>
-                <li>2 cloves garlic, minced</li>
-                <li>1 teaspoon Dijon mustard</li>
-                <li>1 teaspoon lemon zest</li>
-                <li>Salt and pepper to taste</li>
-                <li>Lemon wedges for serving</li>
-                <li>Chopped fresh herbs (such as parsley or dill) for garnish (optional)</li>
-            </ul>
-            <!-- Additional images within the main content section -->
-            
-           <div class="full-width-div" style=" display: flex; flex-wrap: wrap; justify-content: center;">
-                <img class="hover-image" src="fancy.jpg" alt="Grilled salmon">
-                <img class="hover-image" src="rispa.jpg" alt="Grilled salmon">
-                <img class="hover-image" src="pinterest.jpg" alt="Grilled salmon">
-                <img class="hover-image" src="rockets.jpg" alt="Grilled salmon">
-            
-            </div>
-        </section>
-
-        <!-- Instructions section -->
-        <section>
-            <h2>Instructions:</h2>
-            <ol>
-                                <!-- Step-by-step instructions -->
-                <li>
-                    <strong>Marinate the Salmon:</strong>
-                    <p>In a small bowl, whisk together the olive oil, soy sauce, honey, minced garlic, Dijon mustard, lemon zest, salt, and pepper to create the marinade. Place the salmon fillets in a shallow dish and pour half of the marinade over them. Make sure the fillets are well-coated. Let them marinate for at least 30 minutes in the refrigerator. Reserve the other half of the marinade for basting.</p>
-                </li>
-                <li>
-                    <strong>Preheat the Grill:</strong>
-                    <p>Preheat your grill to medium-high heat. Make sure the grates are clean and lightly oiled to prevent sticking.</p>
-                </li>
-                <li>
-                    <strong>Prepare the Salmon for Grilling:</strong>
-                    <p>Remove the marinated salmon from the refrigerator and let it come to room temperature for about 10-15 minutes. Pat the salmon fillets dry with paper towels to remove excess marinade. This helps in achieving a good sear on the grill.</p>
-                </li>
-                <li>
-                    <strong>Grill the Salmon:</strong>
-                    <p>Place the salmon fillets on the preheated grill, skin side down. Close the lid and grill for about 4-6 minutes per side, depending on the thickness of the fillets. Baste the salmon with the reserved marinade while grilling.</p>
-                </li>
-                <li>
-                    <strong>Check for Doneness:</strong>
-                    <p>The salmon is done when it easily flakes with a fork. Be careful not to overcook, as salmon can dry out quickly.</p>
-                </li>
-                <li>
-                    <strong>Serve:</strong>
-                    <p>Carefully remove the grilled salmon from the grill and transfer it to a serving platter. Garnish with chopped fresh herbs if desired and serve with lemon wedges on the side.</p>
-                </li>
-            </ol>
-        </section>
-
-        <!-- Prerequisites section -->
-        <section>
-            <h2>Prerequisites:</h2>
-            <ul>
-                                <!-- List of prerequisites -->
-                <li>Grill: Make sure your grill is clean and properly preheated.</li>
-                <li>Marinade: Allow enough time for the salmon to marinate to enhance flavor.</li>
-                <li>Tongs or a spatula for flipping the salmon on the grill.</li>
-            </ul>
-
-            
-        </section>
-        <!-- Importance section -->
-        <section>
-
-            <h2>Importance of Grilled Salmon:</h2>
-            <ul>
-                                <!-- List of importance points -->
-                <li><strong>Nutrient-Rich:</strong> Salmon is a great source of high-quality protein, omega-3 fatty acids, and various vitamins and minerals.</li>
-                <li><strong>Heart Health:</strong> The omega-3 fatty acids in salmon are known to promote heart health and reduce the risk of cardiovascular diseases.</li>
-                <li><strong>Versatility:</strong> Grilled salmon can be paired with a variety of sides, making it a versatile dish that can be customized to suit different preferences.</li>
-                <li><strong>Quick and Healthy:</strong> Grilling is a quick and healthy cooking method that preserves the nutritional value of the salmon while adding a delicious smoky flavor.</li>
-                <li><strong>Flavorful:</strong> The marinade and grilling process enhance the natural flavor of the salmon, making it a tasty and enjoyable dish.</li>
-            </ul>
-        </section>
-
-<!-- div span both columns -->
-<div class="full-width-div">
-    <img class="hover-image" src="rispa.jpg" alt="Grilled salmon">
-    <img class="hover-image" src="pinterest.jpg" alt="Grilled salmon">
-    <img class="hover-image" src="rockets.jpg" alt="Grilled salmon">
-    <img class="hover-image" src="fancy.jpg" alt="Grilled salmon">
-
-</div>
-
-    <!-- Additional div to span both columns -->
-    <div class="full-width-div">
-        <label class="enlarge-container">
-            <input type="checkbox" class="enlarge-checkbox">
-            <img class="hover-image enlarge-image" src="rockets.jpg" alt="Grilled salmon">
-        </label>
-        <label class="enlarge-container">
-            <input type="checkbox" class="enlarge-checkbox">
-            <img class="hover-image enlarge-image" src="rispa.jpg" alt="Grilled salmon">
-        </label>
-        <label class="enlarge-container">
-            <input type="checkbox" class="enlarge-checkbox">
-            <img class="hover-image enlarge-image" src="pinterest.jpg" alt="Grilled salmon">
-        </label>
-    </div>
-
-
-
-    
-
     </main>
 
-
-<!-- Suggestion section -->
-
-
-<style>
-    /* Styles for the suggestion section */
-    .suggestion {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    /* Styles for the suggestion section */
-    .suggestion {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    /* Styles for each item in the suggestion section */
-    .youmaylike-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        max-width: 400px; /* Adjust as needed */
-    }
-
-    /* Styles for each card */
-    .card {
-        max-width: 500px; /* Adjust as needed */
-        height: 350px;
-        color: black;
-        margin: 0 1px; /* Adjust spacing between cards */
-    }
-
-    /* Styles for the images in the suggestion section */
-    .youmaylike-item img {
-        max-width: 100%;
-        height: 200px;
-        margin-bottom: 20px; /* Adjust spacing between image and paragraph */
-    }
-
-    /* Responsive adjustment for the suggestion section */
-    @media (max-width: 767px) {
-        .youmaylike-item {
-            flex-direction: row;
-            justify-content: space-between;
-            text-align: left;
-        }
-    
-
-    /* Styles for the separator line */
-    .separator {
-        width: 100%;
-        height: 1px;
-        background-color: #ccc; /* Adjust color as needed */
-        margin: 10px 0px; /* Adjust spacing above and below the line */
-    }
-
-    }
-
-       /* Responsive adjustment for the suggestion section */
-       @media (max-width: 767px) {
-        .suggestion {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .youmaylike-item {
-            flex-direction: row;
-            justify-content: space-between;
-            text-align: left;
-            text-align: center;
-        }
-    }
-
-
-</style>
-
-
-
-<!-- Suggestion section -->
-<div class="suggestion youmaylike">
-    <div class="card">
-        <div class="youmaylike-item">
-            <img class="youmaylike" src="rispa.jpg" alt="Caprese salad with tomato">
-            <p>Caprese salad with tomato. </p>
-        </div>
-        <hr class="separator">
-    </div>
-
-    <div class="card">
-        <div class="youmaylike-item">
-            <img class="youmaylike" src="pinterest.jpg" alt="Caprese salad with tomato">
-            <p>Caprese salad with tomato.</p>
-        </div>
-        <hr class="separator">
-    </div>
-
-    <div class="card">
-        <div class="youmaylike-item">
-            <img class="youmaylike" src="rockets.jpg" alt="Caprese salad with tomato">
-            <p>Caprese salad with tomato. </p>
-        </div>
-        <hr class="separator">
-    </div>
-
-    <div class="card">
-        <div class="youmaylike-item">
-            <img class="youmaylike" src="/recipes/assets/Photos/Salads/Caprese/caprese-salad-image-4.png" alt="Caprese salad with tomato">
-            <p>Caprese salad with tomato.</p>
-        </div>
-        <hr class="separator">
-    </div>
-</div>
-
-
-    <!-- Footer section -->
     <footer>
-        <p>Enjoy your delicious and healthy grilled salmon!</p>
+        <p>&copy; 2024 Recipe Project. All rights reserved.</p>
     </footer>
-
-
-    
-
-
-    <!-- Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
-
 </body>
-
 </html>
