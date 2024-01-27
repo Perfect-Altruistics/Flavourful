@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            overflow-x: hidden;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+        header {
+            background-color: rgb(242, 240, 243);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 20px;
+            color: white;
+            width: 200px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        
+        .sidebar-left {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: rgb(20, 61, 144);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgb(20, 61, 144);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #15417a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #a10000;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+        .content {
+        max-width: 800px;
+        margin: 20px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex-grow: 1;
+        margin-right: 10px;
+        height: 623px !important;
+
+    }
+
+    .messages {
+        margin-bottom: 20px;
+        margin-right: 10px;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+    }
+
+
+    .sidebar-left .ingredients a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-left .ingredients a i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .sidebar-left .ingredients a:hover {
+            color: #ccc;
+        }
+
+    </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Contact Us</title>
+</head>
+<body>
+
+    <div class="sidebar-left">
+        <div class="ingredients">
+            <p><a href="about-us.html" class="underlinehover"><i class="fas fa-info-circle"></i></a></p>
+            <p><a href="contact-us.html" class="underlinehover"><i class="fas fa-envelope"></i></a></p>
+            <p><a href="terms-of-service.html" class="underlinehover"><i class="fas fa-file-alt"></i> </a></p>
+        </div>
+    </div>
+    
+<div class="content">
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <div class="container">
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+<div> 
+    
+</div>
+<div class="messages">
+    <h2>This is me and my contact informations</h2>
+    <p>Welcome to our Contact Us page! Feel free to send us your inquiries or feedback using the form below.</p>
+
+    <p>Welcome to our Contact Us page! Feel free to send us your inquiries or feedback using the form below.</p>
+
+    <p>Welcome to our Contact Us page! Feel free to send us your inquiries or feedback using the form below.</p>
+
+    <p>Welcome to our Contact Us page! Feel free to send us your inquiries or feedback using the form below.</p>
+
+    <p>Welcome to our Contact Us page! Feel free to send us your inquiries or feedback using the form below.</p>
+</div>
+
+<footer>
+    &copy; 2024 Your Company Name. All rights reserved.
+</footer>
+
+</body>
+</html>
